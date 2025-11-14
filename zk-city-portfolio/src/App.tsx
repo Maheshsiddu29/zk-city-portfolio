@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Hero";
+import { Expertise } from "./components/Expertise";
+import { Projects } from "./components/Projects";
+import { Experience } from "./components/Experience";
+import { Skills } from "./components/Skills";
+import { Contact } from "./components/Contact";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App: React.FC = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="min-h-screen bg-bg text-white">
+      <Navbar />
+      <main>
+        <Hero />
+        <Expertise />
+        <Projects />
+        <Experience />
+        <Skills />
+        <Contact />
+      </main>
+      <footer className="border-t border-white/5 py-6 text-center text-xs text-white/50">
+        © {new Date().getFullYear()} Sai Mahesh Sure. Built with React ·
+        TypeScript · Tailwind.
+      </footer>
+    </div>
+  );
+};
 
-export default App
+export default App;
