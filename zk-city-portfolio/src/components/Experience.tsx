@@ -1,24 +1,16 @@
 import React from "react";
 import { Section } from "./Section";
 
-type ExperienceItem = {
-  role: string;
-  company: string;
-  location: string;
-  period: string;
-  bullets: string[];
-};
-
-const experience: ExperienceItem[] = [
+const jobs = [
   {
     role: "Senior Blockchain & XR Developer — Retail India",
     company: "Cognizant",
     location: "India",
     period: "Feb 2022 – Jan 2024",
     bullets: [
-      "Architected a Polygon-based supply chain tracking system, reducing product expiry by 30%.",
-      "Integrated blockchain with ERP flows, increasing traceability and auditability across the retail network.",
-      "Built MR dashboards for real-time asset monitoring, cutting issue resolution time and support overhead.",
+      "Architected Polygon-based supply-chain tracking (30% expiry reduction).",
+      "Integrated blockchain with ERP flows for full traceability.",
+      "Built MR dashboards monitoring 150+ assets with $85K annual savings.",
     ],
   },
   {
@@ -27,9 +19,8 @@ const experience: ExperienceItem[] = [
     location: "India",
     period: "Feb 2020 – Jan 2022",
     bullets: [
-      "Developed Ethereum-based prototypes for healthcare and logistics use cases.",
-      "Created AR/VR experiences using Unity and HoloLens2, improving training outcomes and engagement.",
-      "Helped turn PoCs into scalable internal products with stakeholders.",
+      "Developed Ethereum-based prototypes for healthcare and logistics.",
+      "Created AR/VR experiences with HoloLens2 improving training outcomes.",
     ],
   },
   {
@@ -38,34 +29,44 @@ const experience: ExperienceItem[] = [
     location: "India",
     period: "Aug 2019 – Jan 2020",
     bullets: [
-      "Learned core software engineering practices: version control, testing, and deployment workflows.",
-      "Contributed to internal tools and automation scripts improving developer productivity.",
-      "Collaborated with senior engineers on enterprise-grade system design.",
+      "Learned core engineering practices: version control, testing, deployment.",
+      "Contributed to internal automation improving developer productivity.",
     ],
   },
 ];
 
 export const Experience: React.FC = () => {
   return (
-    <Section id="experience" label="Experience">
-      <div className="relative border-l border-white/10 pl-4">
-        {experience.map((item) => (
-          <article key={item.role} className="relative mb-8 last:mb-0">
-            <span className="absolute -left-[9px] mt-1 h-4 w-4 rounded-full border border-accent bg-bg" />
-            <div className="rounded-2xl bg-surface p-4 shadow-sm ring-1 ring-white/5">
+    <Section
+      id="experience"
+      label="Professional experience"
+      eyebrow="Production at scale"
+    >
+      <div className="relative border-l border-white/15 pl-4 sm:pl-6">
+        <div className="pointer-events-none absolute -left-[1px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-neonBlue via-neonPurple to-neonOrange" />
+        {jobs.map((job, idx) => (
+          <article key={job.role} className="relative mb-8 last:mb-0">
+            <span
+              className={`absolute -left-3 mt-1 flex h-5 w-5 items-center justify-center rounded-full border border-white/30 bg-black ${
+                idx === 0 ? "shadow-neon-blue" : "shadow-neon-orange"
+              }`}
+            >
+              <span className="h-2 w-2 rounded-full bg-neonBlue" />
+            </span>
+            <div className="rounded-card border border-white/10 bg-black/65 p-5 backdrop-blur-xl">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h3 className="text-sm font-semibold text-white">
-                  {item.role}
+                  {job.role}
                 </h3>
-                <span className="text-[11px] text-white/50">
-                  {item.period}
+                <span className="text-[11px] text-white/60">
+                  {job.period}
                 </span>
               </div>
               <p className="mt-1 text-xs text-white/60">
-                {item.company} · {item.location}
+                {job.company} · {job.location}
               </p>
-              <ul className="mt-2 space-y-1 text-xs text-white/70">
-                {item.bullets.map((b) => (
+              <ul className="mt-2 space-y-1 text-[11px] text-white/75">
+                {job.bullets.map((b) => (
                   <li key={b}>• {b}</li>
                 ))}
               </ul>

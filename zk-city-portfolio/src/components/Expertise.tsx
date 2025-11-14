@@ -1,7 +1,7 @@
 import React from "react";
 import { Section } from "./Section";
 
-const expertiseItems = [
+const items = [
   {
     title: "Blockchain Security & Smart Contracts",
     description:
@@ -17,7 +17,7 @@ const expertiseItems = [
     description:
       "ZKP-based authentication and sharded storage for healthcare-grade privacy.",
     bullets: [
-      "Groth16, Circom-based circuits",
+      "Groth16, Circom circuits",
       "ZKP login & cookie flows",
       "Sharded data store prototypes",
     ],
@@ -35,57 +35,45 @@ const expertiseItems = [
   {
     title: "XR & Mixed Reality Dashboards",
     description:
-      "Immersive monitoring tools that surface live data on HoloLens and MR devices.",
-    bullets: [
-      "Unity3D, MRTK, HoloLens2",
-      "Azure Spatial Anchors integration",
-      "Realtime asset and issue tracking",
-    ],
-  },
-  {
-    title: "Full-stack & Cloud",
-    description:
-      "Reliable frontends and services wired to blockchain and cloud infra.",
-    bullets: [
-      "React, TypeScript, Node.js",
-      "Azure, Docker, REST APIs",
-      "CI/CD pipelines & test suites",
-    ],
-  },
-  {
-    title: "Team Leadership & Collaboration",
-    description:
-      "Turning ambiguous ideas into delivered systems with measurable impact.",
-    bullets: [
-      "Cross-functional coordination",
-      "Mentoring engineers & trainees",
-      "Data-driven impact tracking",
-    ],
+      "Immersive dashboards that surface live data on HoloLens and MR devices.",
+    bullets: ["Unity3D, MRTK, HoloLens2", "Real-time asset tracking"],
   },
 ];
 
 export const Expertise: React.FC = () => {
   return (
-    <Section id="expertise" label="Expertise">
+    <Section
+      id="expertise"
+      label="Production systems with measurable impact."
+      eyebrow="Expertise"
+    >
       <p className="max-w-2xl text-sm text-white/70">
-        A blend of blockchain security, ZKP research, and XR development,
-        focused on production-grade systems with real-world metrics.
+        A blend of blockchain security, ZK research, and XR development focused
+        on systems that can be audited, monitored, and actually deployed.
       </p>
-      <div className="grid gap-5 md:grid-cols-2">
-        {expertiseItems.map((item) => (
+
+      <div className="mt-6 grid gap-5 md:grid-cols-2">
+        {items.map((item, idx) => (
           <article
             key={item.title}
-            className="rounded-2xl border border-white/5 bg-surface p-5 shadow-sm transition hover:border-accent/60 hover:shadow-lg"
+            className={`relative overflow-hidden rounded-card border border-white/10 bg-black/55 p-5 backdrop-blur-xl transition hover:border-neonBlue/60 ${
+              idx % 2 === 0 ? "shadow-neon-blue/40" : "shadow-neon-orange/40"
+            }`}
           >
-            <h3 className="text-base font-semibold text-white">
-              {item.title}
-            </h3>
-            <p className="mt-2 text-sm text-white/70">{item.description}</p>
-            <ul className="mt-3 space-y-1 text-xs text-white/60">
-              {item.bullets.map((b) => (
-                <li key={b}>• {b}</li>
-              ))}
-            </ul>
+            <div className="pointer-events-none absolute inset-0 opacity-60">
+              <div className="absolute inset-px rounded-[22px] bg-[radial-gradient(circle_at_0%_0%,rgba(56,189,248,0.25),transparent_55%),radial-gradient(circle_at_100%_100%,rgba(251,146,60,0.20),transparent_55%)]" />
+            </div>
+            <div className="relative">
+              <h3 className="text-sm font-semibold text-white">
+                {item.title}
+              </h3>
+              <p className="mt-2 text-xs text-white/70">{item.description}</p>
+              <ul className="mt-3 space-y-1 text-[11px] text-white/65">
+                {item.bullets.map((b) => (
+                  <li key={b}>• {b}</li>
+                ))}
+              </ul>
+            </div>
           </article>
         ))}
       </div>

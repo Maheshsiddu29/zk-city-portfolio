@@ -5,7 +5,7 @@ type Project = {
   title: string;
   period: string;
   tagline: string;
-  metrics: string[];
+  metrics: { label: string; value: string }[];
   tech: string[];
 };
 
@@ -16,83 +16,85 @@ const projects: Project[] = [
     tagline:
       "Polygon-based dApp for secure medical record processing across providers.",
     metrics: [
-      "30% enhanced security & compliance verification by 3 independent auditors",
-      "Optimized contracts handling 500K+ daily tx with 40% gas reduction",
-      "Confirmation time improved from 45s to 12s"
+      { label: "Enhanced security", value: "30%" },
+      { label: "Gas cost reduction", value: "40%" },
+      { label: "Daily tx handled", value: "500K+" },
+      { label: "Confirmation time", value: "12s" },
     ],
-    tech: ["Polygon", "Solidity", "Hardhat", "React", "TypeScript"]
+    tech: ["Polygon", "Solidity", "Hardhat", "React", "TypeScript"],
   },
   {
     title: "Healthcare Security with ZKP",
     period: "Feb 2025 – May 2025",
     tagline:
-      "ZKP-based authentication and sharded storage for patient data protection.",
+      "ZKP authentication and sharded storage for patient data protection.",
     metrics: [
-      "40% reduction in identified breach risks",
-      "All independent penetration tests passed",
-      "15% faster response under peak load with 2K+ simulated users"
+      { label: "Breach risk ↓", value: "40%" },
+      { label: "Faster response", value: "15%" },
+      { label: "Concurrent users", value: "2K+" },
+      { label: "Uptime", value: "99.98%" },
     ],
-    tech: ["ZKP", "Circom", "Groth16", "Polygon", "Sharding"]
+    tech: ["ZK-SNARKs", "Circom", "Groth16", "Polygon"],
   },
-  {
-    title: "Ethereum Healthcare System",
-    period: "Feb 2019 – Jun 2019",
-    tagline:
-      "Early blockchain prototype for end-to-end healthcare record integrity.",
-    metrics: [
-      "70% faster record retrieval versus baseline",
-      "99.9% data integrity verification",
-      "$25K annual verification cost reduction per provider"
-    ],
-    tech: ["Ethereum", "Solidity", "Web3.js"]
-  }
 ];
 
 export const Projects: React.FC = () => {
   return (
-    <Section id="projects" label="Selected Projects">
-      <p className="max-w-2xl text-sm text-white/70">
-        A snapshot of systems I&apos;ve designed and shipped around healthcare,
-        privacy, and immersive monitoring.
-      </p>
-      <div className="mt-4 grid gap-6 md:grid-cols-3">
-        {projects.map((project) => (
-          <div
+    <Section
+      id="projects"
+      label="Featured projects"
+      eyebrow="Production systems"
+    >
+      <div className="space-y-6">
+        {projects.map((project, idx) => (
+          <article
             key={project.title}
-            className="rounded-[28px] bg-card-gradient p-[1px] shadow-glow-soft"
+            className={`relative overflow-hidden rounded-card border border-white/12 bg-black/70 p-6 shadow-soft backdrop-blur-xl ${
+              idx === 0 ? "shadow-neon-blue" : "shadow-neon-orange"
+            }`}
           >
-            <article className="flex h-full flex-col rounded-[26px] bg-surface/90 p-5 backdrop-blur-xl">
+            <div className="pointer-events-none absolute inset-0 opacity-70">
+              <div className="absolute inset-px rounded-[22px] bg-card-gradient" />
+            </div>
+            <div className="relative space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <h3 className="text-sm font-semibold text-white">
+                <h3 className="text-lg font-semibold text-white">
                   {project.title}
                 </h3>
-                <span className="text-[11px] text-white/50">
+                <span className="text-xs text-white/60">
                   {project.period}
                 </span>
               </div>
-              <p className="mt-2 text-xs text-white/70">{project.tagline}</p>
+              <p className="text-sm text-white/80">{project.tagline}</p>
 
-              <ul className="mt-3 space-y-1 text-[11px] text-white/70">
+              <div className="grid gap-3 sm:grid-cols-4">
                 {project.metrics.map((m) => (
-                  <li key={m} className="flex gap-2">
-                    <span className="mt-[5px] h-[4px] w-[4px] rounded-full bg-accent2" />
-                    <span>{m}</span>
-                  </li>
+                  <div
+                    key={m.label}
+                    className="rounded-xl bg-black/55 px-3 py-3 text-center text-xs"
+                  >
+                    <p className="text-lg font-semibold text-neonBlue">
+                      {m.value}
+                    </p>
+                    <p className="mt-1 text-[11px] text-white/70">
+                      {m.label}
+                    </p>
+                  </div>
                 ))}
-              </ul>
+              </div>
 
-              <div className="mt-4 flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 text-[11px]">
                 {project.tech.map((t) => (
                   <span
                     key={t}
-                    className="rounded-full bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.15em] text-white/70"
+                    className="rounded-pill bg-black/40 px-3 py-1 text-white/80"
                   >
                     {t}
                   </span>
                 ))}
               </div>
-            </article>
-          </div>
+            </div>
+          </article>
         ))}
       </div>
     </Section>
