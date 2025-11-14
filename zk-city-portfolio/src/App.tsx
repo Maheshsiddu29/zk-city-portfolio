@@ -3,7 +3,7 @@ import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Expertise } from "./components/Expertise";
 import { Projects } from "./components/Projects";
-import { Experience } from "./components/Experience";
+import Experience from "./components/Experience";
 import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
 import { IntroOverlay } from "./components/IntroOverlay";
