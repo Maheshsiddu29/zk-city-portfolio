@@ -9,9 +9,9 @@ export const Hero: React.FC = () => {
 
   return (
     <section
-      id="about"
-      className="flex min-h-screen items-center bg-gradient-to-b from-bg via-bg to-surfaceSoft px-4 pt-24"
-    >
+    id="about"
+    className="flex min-h-screen items-center bg-app-gradient px-4 pt-24"
+  >
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[3fr,2fr] md:items-center">
         {/* Left: text */}
         <div className="space-y-6">
