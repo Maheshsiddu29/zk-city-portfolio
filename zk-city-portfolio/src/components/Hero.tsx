@@ -14,7 +14,8 @@ export const Hero: React.FC = () => {
       label="I build secure blockchain systems and immersive tools that ship."
       eyebrow="Smart Contract Engineer · XR Architect"
     >
-      <div className="grid gap-8 lg:grid-cols-[3fr,2fr] lg:items-center">
+      <div className="grid gap-8 lg:grid-cols-[3fr,2fr] lg:items-center hero-animate">
+
         <div className="space-y-6 text-sm text-white/75">
           <p>
             I&apos;m Sai Mahesh, a blockchain and XR engineer focused on
