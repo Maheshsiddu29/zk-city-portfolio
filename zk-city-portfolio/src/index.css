@@ -151,3 +151,42 @@ body {
   opacity: 0.55;
   filter: blur(0.4px);
 }
+
+/* === Expertise card hover gradient (blue + orange only) === */
+
+@keyframes neonCardGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.expertise-card-gradient {
+  position: absolute;
+  inset: -1px; /* slightly outside border for a clean edge */
+  border-radius: 1.5rem; /* matches rounded-3xl */
+  background: linear-gradient(135deg, #22d3ee, #fb923c, #22d3ee);
+  background-size: 220% 220%;
+  opacity: 0;
+  filter:
+    drop-shadow(0 0 28px rgba(34, 211, 238, 0.7))
+    drop-shadow(0 0 22px rgba(251, 146, 60, 0.7));
+  transition: opacity 0.35s ease-out;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.group:hover .expertise-card-gradient {
+  opacity: 1;
+  animation: neonCardGlow 4s ease-in-out infinite;
+}
+
+.expertise-card-inner {
+  position: relative;
+  z-index: 1; /* keep content above the gradient layer */
+}

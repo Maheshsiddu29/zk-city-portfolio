@@ -62,7 +62,7 @@ export const Expertise: React.FC = () => {
         <div className="mb-16 text-center">
           <div className="mb-4 inline-block">
             <div className="glass rounded-full px-6 py-2">
-              <span className="text-sm font-semibold uppercase tracking-[0.28em] text-plasma-purple">
+              <span className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">
                 Expertise
               </span>
             </div>
@@ -85,43 +85,49 @@ export const Expertise: React.FC = () => {
             const Icon = item.icon;
             return (
               <div key={item.title} className="h-full">
-                <div className="group relative flex h-full flex-col rounded-3xl border border-white/10 bg-gradient-to-b from-slate-950/90 via-slate-900/90 to-slate-950/95 backdrop-blur-2xl shadow-[0_18px_60px_rgba(15,23,42,0.9)] transition-shadow duration-300 hover:shadow-[0_22px_80px_rgba(56,189,248,0.7)]">
-                  {/* neon edge */}
-                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-electric-cyan via-plasma-purple to-neon-magenta opacity-90" />
+                <div className="group relative h-full">
+                  {/* animated blue/orange gradient layer */}
+                  <div className="expertise-card-gradient" />
 
-                  <div className="p-7 sm:p-8">
-                    {/* icon pill */}
-                    <div className="mb-6 inline-flex rounded-2xl bg-slate-950/90 p-3 shadow-[0_0_26px_rgba(56,189,248,0.6)]">
-                      <Icon className="h-6 w-6 text-electric-cyan" />
+                  {/* actual card */}
+                  <div className="expertise-card-inner flex h-full flex-col rounded-3xl border border-white/10 bg-gradient-to-b from-slate-950/95 via-slate-900/95 to-slate-950/95 backdrop-blur-2xl shadow-[0_18px_60px_rgba(15,23,42,0.9)] transition-shadow duration-300 group-hover:shadow-[0_24px_90px_rgba(15,23,42,1)]">
+                    {/* top border – blue/orange only */}
+                    <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-[linear-gradient(90deg,#22d3ee,#fb923c,#22d3ee)] opacity-90" />
+
+                    <div className="p-7 sm:p-8">
+                      {/* icon pill */}
+                      <div className="mb-6 inline-flex rounded-2xl bg-slate-950/90 p-3 shadow-[0_0_26px_rgba(34,211,238,0.7)]">
+                        <Icon className="h-6 w-6 text-cyan-300" />
+                      </div>
+
+                      {/* title + subtitle */}
+                      <h3 className="mb-2 text-xl font-semibold sm:text-2xl">
+                        {item.title}
+                      </h3>
+                      <p className="mb-6 text-sm text-muted-foreground">
+                        {item.subtitle}
+                      </p>
+
+                      {/* bullets */}
+                      <ul className="space-y-3">
+                        {item.points.map((point) => (
+                          <li
+                            key={point}
+                            className="flex gap-3 text-sm leading-relaxed text-white/85"
+                          >
+                            {/* neon arrow bullet */}
+                            <span className="mt-1 text-base text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.9)]">
+                              ▸
+                            </span>
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
 
-                    {/* title + subtitle */}
-                    <h3 className="mb-2 text-xl font-semibold sm:text-2xl">
-                      {item.title}
-                    </h3>
-                    <p className="mb-6 text-sm text-muted-foreground">
-                      {item.subtitle}
-                    </p>
-
-                    {/* bullets */}
-                    <ul className="space-y-3">
-                      {item.points.map((point) => (
-                        <li
-                          key={point}
-                          className="flex gap-3 text-sm leading-relaxed text-white/85"
-                        >
-                          {/* neon arrow bullet like reference screenshot */}
-                          <span className="mt-1 text-base text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.9)]">
-                            ▸
-                          </span>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {/* subtle bottom highlight */}
+                    <div className="pointer-events-none absolute inset-x-6 bottom-0 h-10 rounded-t-full bg-gradient-to-t from-cyan-400/25 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   </div>
-
-                  {/* subtle rounded highlight at the bottom of card */}
-                  <div className="pointer-events-none absolute inset-x-6 bottom-0 h-10 rounded-t-full bg-gradient-to-t from-electric-cyan/15 via-plasma-purple/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </div>
               </div>
             );
