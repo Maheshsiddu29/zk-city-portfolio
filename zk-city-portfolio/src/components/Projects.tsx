@@ -23,6 +23,7 @@ const projects: Project[] = [
     ],
     tech: ["Polygon", "Solidity", "Hardhat", "React", "TypeScript"],
   },
+  
   {
     title: "Healthcare Security with ZKP",
     period: "Feb 2025 – May 2025",
@@ -36,6 +37,32 @@ const projects: Project[] = [
     ],
     tech: ["ZK-SNARKs", "Circom", "Groth16", "Polygon"],
   },
+  {
+    title: "Healthcare Security with ZKP",
+    period: "Feb 2025 – May 2025",
+    tagline:
+      "ZKP authentication and sharded storage for patient data protection.",
+    metrics: [
+      { label: "Breach risk ↓", value: "40%" },
+      { label: "Faster response", value: "15%" },
+      { label: "Concurrent users", value: "2K+" },
+      { label: "Uptime", value: "99.98%" },
+    ],
+    tech: ["ZK-SNARKs", "Circom", "Groth16", "Polygon"],
+  },
+  {
+    title: "Healthcare Security with ZKP",
+    period: "Feb 2025 – May 2025",
+    tagline:
+      "ZKP authentication and sharded storage for patient data protection.",
+    metrics: [
+      { label: "Breach risk ↓", value: "40%" },
+      { label: "Faster response", value: "15%" },
+      { label: "Concurrent users", value: "2K+" },
+      { label: "Uptime", value: "99.98%" },
+    ],
+    tech: ["ZK-SNARKs", "Circom", "Groth16", "Polygon"],
+  }
 ];
 
 export const Projects: React.FC = () => {
