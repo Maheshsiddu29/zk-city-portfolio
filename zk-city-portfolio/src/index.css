@@ -181,10 +181,35 @@ body {
   z-index: 0;
 }
 
+.expertise-card-gradient {
+  position: absolute;
+  /* pull the glow outwards a bit */
+  inset: -36px;
+  border-radius: 2.5rem;
+  /* blue ↔ orange only */
+  background: radial-gradient(circle at 0% 0%, #22d3ee, transparent 55%),
+              radial-gradient(circle at 100% 0%, #fb923c, transparent 55%),
+              radial-gradient(circle at 50% 100%, #22d3ee, transparent 55%);
+  background-size: 200% 200%;
+  opacity: 0;
+  filter: blur(26px);
+  transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .group:hover .expertise-card-gradient {
   opacity: 1;
-  animation: neonCardGlow 4s ease-in-out infinite;
+  transform: scale(1.02);
+  animation: neonCardGlow 5s ease-in-out infinite;
 }
+
+/* keep this as-is from before */
+.expertise-card-inner {
+  position: relative;
+  z-index: 1;
+}
+
 
 .expertise-card-inner {
   position: relative;

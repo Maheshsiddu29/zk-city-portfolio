@@ -91,8 +91,7 @@ export const Expertise: React.FC = () => {
 
                   {/* actual card */}
                   <div className="expertise-card-inner flex h-full flex-col rounded-3xl border border-white/10 bg-gradient-to-b from-slate-950/95 via-slate-900/95 to-slate-950/95 backdrop-blur-2xl shadow-[0_18px_60px_rgba(15,23,42,0.9)] transition-shadow duration-300 group-hover:shadow-[0_24px_90px_rgba(15,23,42,1)]">
-                    {/* top border – blue/orange only */}
-                    <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-[linear-gradient(90deg,#22d3ee,#fb923c,#22d3ee)] opacity-90" />
+                   
 
                     <div className="p-7 sm:p-8">
                       {/* icon pill */}
