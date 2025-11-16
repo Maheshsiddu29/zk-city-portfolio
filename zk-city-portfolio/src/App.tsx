@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
 import { Expertise } from "./components/Expertise";
 import { Projects } from "./components/Projects";
 import Experience from "./components/Experience";
@@ -8,6 +7,7 @@ import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
 import { IntroOverlay } from "./components/IntroOverlay";
 import { BackgroundOrbits } from "./components/BackgroundOrbits";
+import Hero from "./components/Hero";
 
 const App: React.FC = () => {
   const [showIntro, setShowIntro] = useState(true);
@@ -19,17 +19,20 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-bg bg-page-gradient text-white relative overflow-hidden">
-      {/* Animated neon orbits always behind content */}
+      {/* Animated neon orbits behind everything */}
       <BackgroundOrbits />
 
-      {/* Boot screen overlay on top for the first ~2.6s */}
+      {/* Boot screen overlay for the first ~2.6s */}
       {showIntro && <IntroOverlay />}
 
       {/* Foreground content */}
       <div className="relative z-10">
         <Navbar />
         <main className="pt-20 space-y-16 pb-20">
+          {/* NEW: laser beam + hero combo */}
           <Hero />
+
+          {/* Rest of the page */}
           <Expertise />
           <Projects />
           <Experience />
