@@ -2,40 +2,41 @@ import { Briefcase, Sparkles } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
-    {
-      role: "Senior Blockchain & XR Developer — Retail India",
-      company: "Cognizant",
-      location: "India",
-      period: "Feb 2022 – Jan 2024",
-      highlights: [
-        "Architected Polygon-based supply chain tracking system (30% expiry reduction)",
-        "Built Unity3D platform for 2,000+ monthly users (25% faster resolution)",
-        "Engineered MR dashboards for 150+ assets ($85K annual savings)",
-      ],
-    },
-    {
-      role: "Blockchain & AR/VR Developer",
-      company: "Cognizant",
-      location: "India",
-      period: "Dec 2021 – Feb 2022",
-      highlights: [
-        "Pioneered Ethereum/Polygon tracking system (99.8% reliability)",
-        "Developed automotive AR app (35% engagement increase)",
-        "Created navigation system with Dynamics 365 (40% faster wayfinding)",
-      ],
-    },
-    {
-      role: "Program Analyst Trainee",
-      company: "Cognizant",
-      location: "India",
-      period: "Dec 2020 – Dec 2021",
-      highlights: [
-        "Ranked top 10% among 120 trainees in full-stack development",
-        "Built blockchain verification prototype (3 days → 10 minutes)",
-        "Developed internal tools adopted by 75+ colleagues",
-      ],
-    },
-  ];
+  {
+    role: "Senior Blockchain & XR Engineer — Retail India",
+    company: "Cognizant",
+    location: "India",
+    period: "Feb 2022 – Jan 2024",
+    highlights: [
+      "Led the shift from fragile retail ops to a Polygon-backed tracking layer that the business could finally trust.",
+      "Designed Unity3D incident and support tools that turned chaotic support calls into structured, visual flows.",
+      "Built mixed-reality dashboards so teams could literally walk around their infrastructure instead of scrolling through logs.",
+    ],
+  },
+  {
+    role: "Blockchain & AR/VR Developer",
+    company: "Cognizant",
+    location: "India",
+    period: "Dec 2021 – Feb 2022",
+    highlights: [
+      "Prototyped Ethereum/Polygon flows for supply-chain and identity problems the team didn’t yet have words for.",
+      "Experimented with AR experiences for automotive clients — from showroom moments to service bay guidance.",
+      "Helped non-crypto teams reason about wallets, chains, and gas fees without drowning in jargon.",
+    ],
+  },
+  {
+    role: "Program Analyst Trainee",
+    company: "Cognizant",
+    location: "India",
+    period: "Dec 2020 – Dec 2021",
+    highlights: [
+      "Bootstrapped my way from full-stack basics to being ‘the blockchain person’ people pinged for weird ideas.",
+      "Built internal tools and prototypes that quietly spread across teams because they actually solved daily pain.",
+      "Learned how to ship real things in messy environments — not just clean diagrams in a notebook.",
+    ],
+  },
+];
+
 
   return (
     <section id="experience" className="py-24 relative overflow-hidden">

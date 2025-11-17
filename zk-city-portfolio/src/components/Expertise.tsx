@@ -1,5 +1,12 @@
 import React from "react";
-import { Shield, Lock, Activity, Cpu } from "lucide-react";
+import {
+  Shield,
+  Lock,
+  Activity,
+  Cpu,
+  Globe2,
+  Zap,
+} from "lucide-react";
 
 type ExpertiseItem = {
   title: string;
@@ -10,52 +17,72 @@ type ExpertiseItem = {
 
 const expertiseItems: ExpertiseItem[] = [
   {
-    title: "Blockchain Security & Smart Contracts",
-    subtitle: "Polygon / Ethereum systems with measurable impact.",
-    icon: Shield,
-    points: [
-      "Architected Polygon-based supply chain systems with 30% expiry reduction",
-      "Optimized smart contracts handling 500K+ daily transactions",
-      "Reduced gas costs by 40% through advanced optimization",
-    ],
-  },
-  {
-    title: "Zero-Knowledge Proofs & Sharding",
-    subtitle: "Privacy-first authentication and scalable data flows.",
+    title: "Zero-Knowledge Systems",
+    subtitle: "Proving more, revealing less.",
     icon: Lock,
     points: [
-      "Implemented ZKP authentication reducing breach risks by 40%",
-      "Built sharded storage for 15% faster response under peak loads",
-      "Achieved 99.98% simulated uptime with 2K+ concurrent users",
+      "Designing circuits and flows where servers learn exactly what they need — nothing extra.",
+      "Turning traits like age, intent, or trust level into private predicates instead of database flags.",
+      "Exploring ZK patterns for cookies, access control, and consent that feel invisible to users.",
     ],
   },
   {
-    title: "Healthcare dApps & Data Exchange",
-    subtitle: "End-to-end medical data flows with traceability.",
+    title: "Smart Contract Engineering",
+    subtitle: "Code paths you can sleep on.",
+    icon: Shield,
+    points: [
+      "Shaping on-chain architectures on Ethereum & Polygon with clear invariants and failure modes.",
+      "Thinking in terms of state machines, upgrade paths, and how contracts age in the real world.",
+      "Obsessed with readability, reviewability, and making “what can go wrong?” easy to answer.",
+    ],
+  },
+  {
+    title: "DeFi & Infra Thinking",
+    subtitle: "Composability as a design constraint.",
+    icon: Globe2,
+    points: [
+      "Reasoning about bridges, keepers, vaults, and oracles as Lego bricks instead of siloed services.",
+      "Designing flows that play nicely with existing tooling instead of demanding yet another dashboard.",
+      "Caring about liveness, slippage, and failure cascades just as much as fancy yields.",
+    ],
+  },
+  {
+    title: "Healthcare dApps & Data Rails",
+    subtitle: "Sensitive data on cryptographic rails.",
     icon: Activity,
     points: [
-      "Developed Polygon-based dApp for secure medical records",
-      "Accelerated confirmations from 45s to 12s",
-      "Achieved 99.9% data integrity verification across providers",
+      "Building flows where patients stay in control while providers still get trustworthy signals.",
+      "Using Polygon as the coordination layer, not the place where raw medical data lives forever.",
+      "Exploring how ZK and encryption can make compliance a property of the system, not a checklist.",
     ],
   },
   {
-    title: "XR & Mixed Reality Dashboards",
-    subtitle: "Immersive monitoring for high-stakes environments.",
+    title: "XR & Spatial Interfaces",
+    subtitle: "Touching your infra in 3D.",
     icon: Cpu,
     points: [
-      "Engineered MR dashboards tracking 150+ assets in real time",
-      "Improved issue resolution time by 25% via 3D visualization",
-      "Designed XR experiences for complex operational workflows",
+      "Designing Unity/MR experiences where teams walk through assets, alerts, and incidents.",
+      "Using depth, motion, and spatial grouping to make complex systems feel instantly scannable.",
+      "Bridging the gap between raw telemetry and intuitive, almost game-like control surfaces.",
+    ],
+  },
+  {
+    title: "Product, Narrative & DX",
+    subtitle: "Making heavy infra feel light.",
+    icon: Zap,
+    points: [
+      "Framing protocol features as stories real users can understand and care about.",
+      "Sweating the details of error states, loading, and the first 60 seconds of a new flow.",
+      "Treating docs, diagrams, and dev experience as first-class parts of the product.",
     ],
   },
 ];
 
 export const Expertise: React.FC = () => {
   return (
-    <section id="expertise" className="py-24 relative overflow-hidden">
+    <section id="expertise" className="relative overflow-hidden py-24">
       {/* subtle grid background */}
-      <div className="absolute inset-0 grid-pattern opacity-80" />
+      <div className="grid-pattern absolute inset-0 opacity-80" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         {/* header */}
@@ -69,13 +96,13 @@ export const Expertise: React.FC = () => {
           </div>
 
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
-            Specialized skills that{" "}
-            <span className="text-gradient">drive outcomes</span>.
+            The systems I{" "}
+            <span className="text-gradient">can’t stop thinking about.</span>
           </h2>
           <p className="mx-auto max-w-2xl text-base text-muted-foreground sm:text-lg">
-            A blend of blockchain security, ZK research, and XR development
-            focused on production systems that can be audited, monitored, and
-            actually deployed.
+            A mix of zero-knowledge, smart contracts, healthcare rails, and XR —
+            all pointed at one goal: make serious infrastructure feel clear,
+            safe, and strangely fun to use.
           </p>
         </div>
 
@@ -90,12 +117,10 @@ export const Expertise: React.FC = () => {
                   <div className="expertise-card-gradient" />
 
                   {/* actual card */}
-                  <div className="expertise-card-inner flex h-full flex-col rounded-3xl border border-white/10 bg-gradient-to-b from-slate-950/95 via-slate-900/95 to-slate-950/95 backdrop-blur-2xl shadow-[0_18px_60px_rgba(15,23,42,0.9)] transition-shadow duration-300 group-hover:shadow-[0_24px_90px_rgba(15,23,42,1)]">
-                   
-
+                  <div className="expertise-card-inner flex h-full flex-col rounded-3xl border border-white/10 bg-gradient-to-b from-slate-950/95 via-slate-900/95 to-slate-950/95 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-2xl transition-shadow duration-300 group-hover:shadow-[0_24px_90px_rgba(15,23,42,1)]">
                     <div className="p-7 sm:p-8">
                       {/* icon pill */}
-                      <div className="mb-6 inline-flex rounded-2xl bg-slate-950/90 p-3 shadow-[0_0_26px_rgba(34,211,238,0.7)]">
+                      <div className="mb-6 inline-flex rounded-2xl bg-slate-950/90 p-3 shadow-[0_0_26px_rgba(56,189,248,0.9)]">
                         <Icon className="h-6 w-6 text-cyan-300" />
                       </div>
 
@@ -115,7 +140,7 @@ export const Expertise: React.FC = () => {
                             className="flex gap-3 text-sm leading-relaxed text-white/85"
                           >
                             {/* neon arrow bullet */}
-                            <span className="mt-1 text-base text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.9)]">
+                            <span className="mt-1 text-base text-neonOrange drop-shadow-[0_0_14px_rgba(248,165,76,0.9)]">
                               ▸
                             </span>
                             <span>{point}</span>

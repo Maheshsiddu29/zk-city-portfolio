@@ -3,41 +3,47 @@ import { Section } from "./Section";
 
 const categories = [
   {
-    label: "Programming Languages",
-    pills: ["Solidity", "TypeScript / JavaScript", "Python", "Rust", "C#", "SQL"],
+    label: "Chains & Protocol Infra",
+    pills: [
+      "Ethereum",
+      "Polygon",
+      "Solidity",
+      "EVM tooling",
+      "Hardhat",
+      "Foundry (exploring)",
+    ],
   },
   {
-    label: "Blockchain & Security",
+    label: "Zero-Knowledge & Crypto Primitives",
     pills: [
-      "Smart Contracts",
       "ZK-SNARKs",
       "Circom",
+      "snarkjs",
       "Groth16",
-      "Gas Optimization",
-      "Hardhat",
-      "Truffle",
+      "Poseidon hashes",
+      "Basic cryptography",
     ],
   },
   {
-    label: "XR & Frontend",
+    label: "Frontend, XR & Interaction",
     pills: [
-      "Unity3D",
-      "MRTK",
-      "HoloLens2",
       "React",
-      "Next.js",
-      "Azure Spatial Anchors",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Unity3D",
+      "HoloLens 2 / MRTK",
     ],
   },
   {
-    label: "Cloud / DevOps / Testing",
+    label: "Tooling, Testing & Ops",
     pills: [
-      "Azure",
-      "Docker",
-      "CI/CD",
-      "REST APIs",
-      "Integration Testing",
+      "Git & GitHub",
       "Hardhat tests",
+      "Integration testing",
+      "REST APIs",
+      "Docker",
+      "Azure / CI-CD",
     ],
   },
 ];
@@ -46,12 +52,12 @@ export const Skills: React.FC = () => {
   return (
     <Section
       id="skills"
-      label="Technical skills"
-      eyebrow="Tech arsenal"
+      label="Technical stack"
+      eyebrow="What I reach for"
     >
       <p className="max-w-2xl text-sm text-white/70">
-        A toolkit centered around secure blockchain systems, immersive XR
-        experiences, and production-ready engineering workflows.
+        Tools and stacks I lean on to ship ZK experiments, on-chain systems,
+        and XR interfaces that can survive outside a demo environment.
       </p>
 
       <div className="mt-6 grid gap-5 md:grid-cols-2">
@@ -86,3 +92,5 @@ export const Skills: React.FC = () => {
     </Section>
   );
 };
+
+export default Skills;
