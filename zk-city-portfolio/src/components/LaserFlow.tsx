@@ -474,7 +474,7 @@ export const LaserFlow: React.FC<Props> = ({
 
     const clamp = (v: number, lo: number, hi: number) =>
       Math.max(lo, Math.min(hi, v));
-    const dprFloor = 0.6;
+    const dprFloor = 0.8;
     const lowerThresh = 50;
     const upperThresh = 58;
     let lastDprChangeRef = 0;

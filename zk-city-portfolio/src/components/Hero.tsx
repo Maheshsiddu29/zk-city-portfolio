@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
           verticalBeamOffset={-0.12}
           wispDensity={1.1}
           verticalSizing={2.6}
-          horizontalSizing={0.75}
+          horizontalSizing={0.90}
           fogIntensity={0.6}
           flowStrength={0.35}
           flowSpeed={0.35}
@@ -35,17 +35,17 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-end">
+        <div className="flex flex-col gap-02 lg:flex-row ">
           {/* Left: main story */}
           <div className="max-w-3xl">
             <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.05]">
-              Hey, I&apos;m Mahesh — I design{" "}
+              Hey, I&apos;m Mahesh - I design{" "}
               <span className="text-neonBlue">trustless rails</span> and{" "}
               <span className="text-neonOrange">playful interfaces</span> for
               systems that shouldn&apos;t break.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/75 sm:text-base">
+            {/* <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/75 sm:text-base">
               My happy place is where{" "}
               <span className="text-neonBlue/90">
                 cryptography, blockchains, and mixed reality
@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
               </span>{" "}
               to answer a simple question: how do we make serious infrastructure
               feel delightful?
-            </p>
+            </p> */}
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a

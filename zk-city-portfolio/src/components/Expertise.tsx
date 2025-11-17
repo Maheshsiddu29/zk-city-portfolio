@@ -80,7 +80,11 @@ const expertiseItems: ExpertiseItem[] = [
 
 export const Expertise: React.FC = () => {
   return (
-    <section id="expertise" className="relative overflow-hidden py-24">
+   <section
+  id="expertise"
+  className="relative -mt-12 pt-24 pb-24 overflow-hidden"
+>
+
       {/* subtle grid background */}
       <div className="grid-pattern absolute inset-0 opacity-80" />
 
